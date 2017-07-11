@@ -42,7 +42,6 @@ export default class Header extends Component {
     const { token } = this.props;
 
     return (
-      <div>
         <div className="header container">
           <div className="row">
             <div className="left-header-column">
@@ -113,26 +112,7 @@ export default class Header extends Component {
             </div>
           </div>
         </div>
-        {/*<div className={'mobile-menu ' + this.state.currentState}>
-          <span className="shut">
-            <i className="fa fa-times"></i>
-            Close
-          </span>
-          <div className="inner">
-            <p className="title">
-              <span>Shop All</span>
-            </p>
-            <ul>
-              <li><a href="">Knitwear</a></li>
-              <li><a href="">Knitwear</a></li>
-              <li><a href="">Knitwear</a></li>
-              <li><a href="">Knitwear</a></li>
-              <li><a href="">Knitwear</a></li>
-            </ul>
-          </div>
-        </div>*/}
-      </div>
-    );
+    )
   }
 
 }
