@@ -105,6 +105,18 @@
   background: #fff;
   z-index: 1000;
   font-size: 18px;
+  transition: all 0.3s ease-in-out;
+
+  .top {
+    padding: 10px;
+    .shut {
+      font-size: 18px;
+
+      i {
+        font-size: 18px;
+      }
+    }
+  }
 }
 
 .mobile-header {
@@ -196,16 +208,16 @@
     }
   }
 
-  .main-menu.non-active{
+  .main-menu.non-active{  
     display: none;
   }
 
   .mobile-menu.active {
     top: 0;
     position: fixed;
+    right: 0;
     width: 100%;
     height: 100%;
-    display: none;
     z-index: 1000;
     overflow-y: visible;
     background: #fff;

@@ -19,15 +19,13 @@ class HeaderContainer extends Component {
 
 const mapStateToProps = state => {
 
-  const { login, mobile } = state;
+  const { login } = state;
   const { token } = login;
-  const { status } = mobile;
 
   console.log(status);
 
   return {
-    token,
-    status
+    token
   };
 
 };

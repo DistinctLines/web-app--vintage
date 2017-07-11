@@ -9,11 +9,7 @@ class LoginContainer extends Component {
 
   render(){
     return (
-      <div>
-        <Header {...this.props}/>
-        <Login {...this.props}></Login>
-        <Footer />
-      </div>
+      <Login {...this.props}></Login>
     );
   }
 

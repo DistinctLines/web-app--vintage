@@ -12,11 +12,7 @@ class BasketContainer extends Component {
 
   render(){
     return(
-      <div>
-        <Header />
-        <Basket />
-        <Footer />
-      </div>
+      <Basket />
     );
   }
 

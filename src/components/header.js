@@ -10,22 +10,22 @@ export default class Header extends Component {
     super(props);
 
     this.state = {
-      currentState: 'non-active'
+      status: 'non-active'
     }
 
-    this.handleLogout.bind(this);
     this.handleMenu = this.handleMenu.bind(this);
+    this.handleLogout.bind(this);
   }
 
-  handleMenu() {
+   handleMenu() {
 
-    if(this.state.currentState === 'non-active')
-      this.setState({ currentState: 'active' });
+    if (this.state.status === 'non-active')
+      this.setState({ status: 'active' });
     else
-      this.setState({ currentState: 'non-active'});
+      this.setState({ status: 'non-active' });
 
-      console.log(this.state);
-  }
+    console.log(this.state);
+    }
 
   handleLogout(token){
     let logout = getUsers(token);
@@ -42,6 +42,7 @@ export default class Header extends Component {
     const { token } = this.props;
 
     return (
+      <div>
         <div className="header container">
           <div className="row">
             <div className="left-header-column">
@@ -84,7 +85,7 @@ export default class Header extends Component {
             </div>
             <div className="mobile-header">
               <span>
-                <i className={'fa fa-bars ' + this.state.currentState } onClick={this.handleMenu}>
+                <i className="fa fa-bars" onClick={this.handleMenu}>
                 </i>
                 Shop
               </span>
@@ -112,6 +113,27 @@ export default class Header extends Component {
             </div>
           </div>
         </div>
+        <div className={'mobile-menu ' + this.state.status}>
+          <div className="top">
+            <span className="shut">
+              <i className="fa fa-times" onClick={this.handleMenu}></i>
+              Close
+            </span>
+          </div>
+          <div className="inner">
+            <p className="title">
+              <span>Shop All</span>
+            </p>
+            <ul>
+              <li><a href="">Knitwear</a></li>
+              <li><a href="">Knitwear</a></li>
+              <li><a href="">Knitwear</a></li>
+              <li><a href="">Knitwear</a></li>
+              <li><a href="">Knitwear</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     )
   }
 
