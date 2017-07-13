@@ -241,6 +241,7 @@ label {
 
   .form-group {
 
+    box-sizing: border-box;
     margin-bottom: 25px;
 
     input {
@@ -268,6 +269,11 @@ label {
       border: 1px solid black;
       padding: 10px 20px;
       transition: all 0.3s ease-in-out;
+      
+      span {
+        font-size: 12px;
+      }
+
     }
 
     button:hover {
@@ -360,6 +366,10 @@ label {
       border: 1px solid black;
       padding: 10px 20px;
       transition: all 0.3s ease-in-out;
+
+      span {
+        font-size: 12px;
+      }
     }
 
     button:hover {
@@ -387,7 +397,7 @@ label {
 
   .form-group-multiple {
 
-    font-size: 0px;
+    font-size: 14px;
     white-space: nowrap;
     margin-bottom: 25px;
     overflow-x: hidden;
@@ -448,17 +458,53 @@ label {
   #login-column {
     width: 100%;
     display: block;
+
+    .form-group {
+      margin-bottom: 15px;
+
+      button {
+        width: 100%;
+      }
+    }
+
+    .row {
+      margin: 15px 0;
+    }
   }   
 
   #register-column {
     display: block;
+
+    .form-group {
+      margin-bottom: 15px;
+
+      button {
+        width: 100%;
+      }
+    }
 
     .row-first {
       width: 50%;
     }
 
     .row {
+      display: block;
       width: 50%;
+    }
+
+    .form-group-multiple {
+      display: block;
+
+      .row-first {
+        display: block;
+        width: 100%;
+        padding: 0;
+        margin-bottom: 15px;
+      }
+
+      .row {
+        width: 100%;
+      }
     }
 
   }
