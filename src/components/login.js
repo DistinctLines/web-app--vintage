@@ -15,6 +15,7 @@ export default class Login extends Component {
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
     this.handleUsernameChange = this.handleUsernameChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleUpload = this.handleUpload.bind(this);
   }
 
   handleSubmit(e){
@@ -28,6 +29,11 @@ export default class Login extends Component {
       });
       this.props.login(data.token);
     });
+  }
+
+  handleUpload(event){
+    console.log(event.target.files);
+    // uploadFile(event.target.files[0], this.state.token);
   }
 
   handlePasswordChange(e){
@@ -109,6 +115,7 @@ export default class Login extends Component {
               <span>Register</span>
             </button>
           </div>
+          <input type="file" name="filename" onChange={this.handleUpload}/>
         </Form>
       </div>
       </div>
