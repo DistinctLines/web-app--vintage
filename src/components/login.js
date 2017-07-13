@@ -52,7 +52,7 @@ export default class Login extends Component {
           <div id="login-column">
             <h2 className="lines">
               <span>Log In</span>
-            </h2>form re
+            </h2>
             <form onClick={this.handleSubmit}>
               <div className="form-group">
                 <label htmlFor="username">Email Address *</label>

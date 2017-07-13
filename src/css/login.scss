@@ -59,120 +59,120 @@ span {
     margin: 0 auto;
 }
 
-.header {
-    padding: 30px 0 0;
-    overflow: visible;
-    position: relative;
-}
+// .header {
+//     padding: 30px 0 0;
+//     overflow: visible;
+//     position: relative;
+// }
 
-.center-header-column {
-    width: 66.6666666667%;
-    display: inline-block;
-    box-sizing: border-box;
-}
+// .center-header-column {
+//     width: 66.6666666667%;
+//     display: inline-block;
+//     box-sizing: border-box;
+// }
 
-.main-menu {
+// .main-menu {
 
-  width: 100%;
-  text-align: center;
+//   width: 100%;
+//   text-align: center;
 
-  li {
-    display: inline-block;
-    padding: 0;
-    text-decoration: none;
+//   li {
+//     display: inline-block;
+//     padding: 0;
+//     text-decoration: none;
 
-    li {
-      width: 33%;
-      font-size: 13px;
-    }
+//     li {
+//       width: 33%;
+//       font-size: 13px;
+//     }
 
-    a {
-      color: black;
-      text-transform: uppercase;
-      display: block;
-      letter-spacing: 2px;
-      font-size: 14px;
-      padding: 10px 20px;
-    }
+//     a {
+//       color: black;
+//       text-transform: uppercase;
+//       display: block;
+//       letter-spacing: 2px;
+//       font-size: 14px;
+//       padding: 10px 20px;
+//     }
 
-    a:hover {
-      color: white;
-    }
+//     a:hover {
+//       color: white;
+//     }
 
-  }
+//   }
 
-  .first-active:hover {
-    background-color: black;
-  }
+//   .first-active:hover {
+//     background-color: black;
+//   }
 
-  .dropdown-content li a {
-    color: white;
-  }
+//   .dropdown-content li a {
+//     color: white;
+//   }
 
-  .dropdown-content li:hover a{
-    font-weight: 600;
-  }
+//   .dropdown-content li:hover a{
+//     font-weight: 600;
+//   }
 
-  .main-menu li:hover {
-    background-color: black;
-  }
+//   .main-menu li:hover {
+//     background-color: black;
+//   }
 
-  .first-active:hover a{
-      color: white;
-  }
+//   .first-active:hover a{
+//       color: white;
+//   }
 
-  .first-active:hover .dropdown-content {
-      display: block;
-  }
+//   .first-active:hover .dropdown-content {
+//       display: block;
+//   }
 
-  // .first-active:hover .dropdown-content a {
-  //     color: black;
-  // }
+//   // .first-active:hover .dropdown-content a {
+//   //     color: black;
+//   // }
 
-  .dropdown-content {
-    display: none;
-    z-index: 1;
-    position: absolute;
-    width: 100%;border: 1px solid purple;
-    left: 0px;
-    background-color: white;
-    padding: 10px 0;
+//   .dropdown-content {
+//     display: none;
+//     z-index: 1;
+//     position: absolute;
+//     width: 100%;border: 1px solid purple;
+//     left: 0px;
+//     background-color: white;
+//     padding: 10px 0;
 
-    li:hover .dropdown-content a{
-        color: white;
-    }
+//     li:hover .dropdown-content a{
+//         color: white;
+//     }
 
-    .first-active:hover {
+//     .first-active:hover {
 
-        a {
-            color: white;
-        }
-    }
-  }
-}
-.left-header-column {
-  width: 16.66666667%;
-  display: inline-block;
-  padding-right: 15px;
+//         a {
+//             color: white;
+//         }
+//     }
+//   }
+// }
+// .left-header-column {
+//   width: 16.66666667%;
+//   display: inline-block;
+//   padding-right: 15px;
 
-  .social {
+//   .social {
 
-    li {
-        padding: 10px 5px 0;
-        display: inline-block;
-    }
+//     li {
+//         padding: 10px 5px 0;
+//         display: inline-block;
+//     }
 
-    .fa {
-        font-family: normal normal normal 14px/1 FontAwesome;
-        display: inline-block;
-        text-rendering: auto;
-    }
+//     .fa {
+//         font-family: normal normal normal 14px/1 FontAwesome;
+//         display: inline-block;
+//         text-rendering: auto;
+//     }
 
-    .fa-facebook:before {
-        content:"\f09a";
-    }
-  }
-}
+//     .fa-facebook:before {
+//         content:"\f09a";
+//     }
+//   }
+// }
 
 .main-header {
   width: 100%;
@@ -207,6 +207,7 @@ label {
 
 #login-column {
   flex: 1;
+  position: relative;
   // background-color: yellow;
   padding-left: 0.938em;
   padding-right: 0.938em;
@@ -266,6 +267,7 @@ label {
       color: white;
       border: 1px solid black;
       padding: 10px 20px;
+      transition: all 0.3s ease-in-out;
     }
 
     button:hover {
@@ -298,6 +300,7 @@ label {
 
 #register-column {
   flex: 1;
+  position: relative;
   // background-color: orange;
   padding-left: 0.938em;
   padding-right: 0.938em;
@@ -356,6 +359,7 @@ label {
       color: white;
       border: 1px solid black;
       padding: 10px 20px;
+      transition: all 0.3s ease-in-out;
     }
 
     button:hover {
@@ -370,13 +374,15 @@ label {
 
   .row {
     width: 50%;
+    overflow: hidden;
     display: inline-block;
   }
 
   .row-first {
     width: 50%;
+    overflow: hidden;
     display: inline-block;
-    margin-right: 30px;
+    padding-right: 20px;
   }
 
   .form-group-multiple {
@@ -384,6 +390,7 @@ label {
     font-size: 0px;
     white-space: nowrap;
     margin-bottom: 25px;
+    overflow-x: hidden;
 
     label {
       padding-bottom: 2px;
@@ -426,44 +433,72 @@ label {
 
   .container {
     width: 100%;
+
+    .main-header {
+      h2 {
+        text-align: center;
+      }
+    }
   }
 
-  .left-main-column {
-    display: none;
-  }
-
-  .right-main-column {
+  .login-container {
     display: block;
-    // padding-left: 15px;
-    // padding-right: 15px;
+  }
 
-    .table {
-      .desc {
-        min-width: 0px;
-      }
+  #login-column {
+    width: 100%;
+    display: block;
+  }   
+
+  #register-column {
+    display: block;
+
+    .row-first {
+      width: 50%;
     }
 
-    h3 {
-      text-align: center;
-    }
-
-    .price {
-      display: none;
-    }
-
-    .proceed {
-
-      button {
-        width: 100%;
-
-        span {
-          font-size: 12px;
-        }
-      }
-
+    .row {
+      width: 50%;
     }
 
   }
+
+  // .left-main-column {
+  //   display: none;
+  // }
+
+  // .right-main-column {
+  //   display: block;
+  //   // padding-left: 15px;
+  //   // padding-right: 15px;
+
+  //   .table {
+  //     .desc {
+  //       min-width: 0px;
+  //     }
+  //   }
+
+  //   h3 {
+  //     text-align: center;
+  //   }
+
+  //   .price {
+  //     display: none;
+  //   }
+
+  //   .proceed {
+
+  //     button {
+  //       width: 100%;
+
+  //       span {
+  //         font-size: 12px;
+  //       }
+  //     }
+
+  //   }
+
+  // }
 
   .right-main-column .total .inner {
     position: relative;
