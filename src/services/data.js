@@ -52,18 +52,28 @@ export const getUsers = (token) => {
   return data;
 }
 
-// export const uploadFile = (file, token) => {
-//   console.log(file);
-//   let url = 'http://localhost:3000/api/upload?token=' + token;
-//   var formData = new FormData();
-//   formData.append("file", file);
-//   let data = axios.post(url, formData, {
-//     headers: {
-//       'Content-Type': 'multipart/form-data'
-//     }
-//   }).then(res => {
-//     console.log(res);
-//   }).catch(err => {
-//     console.log(err);
-//   });
-// }
+export const uploadFile = (file, token) => {
+  console.log(file);
+  let url = 'http://localhost:3000/api/upload?token=' + token;
+  var formData = new FormData();
+  formData.append("file", file);
+  let data = axios.post(url, formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
+  }).then(res => {
+    console.log(res);
+  }).catch(err => {
+    console.log(err);
+  });
+}
+
+export const getFile = (token) => {
+  let url = 'http://localhost:3000/api/file?token=' + token;
+  let data = axios.get(url)
+    .then(res => {
+      console.log(res);
+    }).catch(err => {
+      console.log(err);
+    })
+}

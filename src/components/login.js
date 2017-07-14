@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import { loginUser } from '../services/data';
+import { loginUser, getFile } from '../services/data';
 import Form from 'react-router-form'
 require('../css/login.scss');
 
@@ -34,6 +34,7 @@ export default class Login extends Component {
   handleUpload(event){
     console.log(event.target.files);
     // uploadFile(event.target.files[0], this.state.token);
+    getFile(this.state.token);
   }
 
   handlePasswordChange(e){
@@ -115,7 +116,8 @@ export default class Login extends Component {
               <span>Register</span>
             </button>
           </div>
-          <input type="file" name="filename" onChange={this.handleUpload}/>
+          <button onClick={this.handleUpload}>Get Image</button>
+         
         </Form>
       </div>
       </div>
@@ -124,3 +126,5 @@ export default class Login extends Component {
   }
 
 }
+
+//   <input type="file" name="filename" onChange={this.handleUpload}/> 
