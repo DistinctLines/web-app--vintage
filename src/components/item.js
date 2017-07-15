@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import $ from 'jquery';
+
 require('../css/item.scss');
 
 class Item extends Component{
@@ -8,8 +10,17 @@ class Item extends Component{
 
   }
 
+  componentDidMount(){
+    $(document).ready(function(){
+      $('.bxslider').bxSlider();
+    });
+  }
+
   render(){
-    return ();
+    return (
+      <div>
+      </div>
+    );
   }
 
 }

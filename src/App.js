@@ -5,10 +5,10 @@ import BasketContainer from './containers/basketcontainer';
 import LoginContainer from './containers/logincontainer';
 import HeaderContainer from './containers/headercontainer';
 import { Router, Route, IndexRoute, browserHistory, hashHistory } from 'react-router';
-
-require('./css/style.scss');
+import $ from 'jquery'
 
 class App extends Component {
+
    render() {
       return (
         <div className="main-div">
