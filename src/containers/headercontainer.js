@@ -22,7 +22,7 @@ const mapStateToProps = state => {
   const { login } = state;
   const { token } = login;
 
-  console.log(status);
+  // console.log(status);
 
   return {
     token

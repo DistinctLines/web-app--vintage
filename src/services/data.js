@@ -68,12 +68,35 @@ export const uploadFile = (file, token) => {
   });
 }
 
-export const getFile = (token) => {
-  let url = 'http://localhost:3000/api/file?token=' + token;
+// export const getFile = (token) => {
+//   let url = 'http://localhost:3000/api/file?token=' + token;
+//   let data = axios.get(url)
+//     .then(res => {
+//       console.log(res);
+//     }).catch(err => {
+//       console.log(err);
+//     })
+// }
+
+export const getImage = (token) => {
+  let url  = 'http://localhost:3000/api/item1?token=' + token;
   let data = axios.get(url)
     .then(res => {
-      console.log(res);
+      return res.data;  
+    }).catch((err) => {
+      // console.log(err);
+    });
+  return data;
+}
+
+export const getIntialData = () => {
+
+  let url = 'http://localhost:3000/item1';
+  let data = axios.get(url)
+    .then(res => {
+      return res;
     }).catch(err => {
       console.log(err);
-    })
+    });
+  return data;
 }

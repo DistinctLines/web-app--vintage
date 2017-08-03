@@ -1,3 +1,5 @@
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -24,5 +26,8 @@ module.exports = {
         loader: 'style-loader!css-loader!sass-loader'
       }
     ]
-  }
+  },
+  plugins: [
+    new CopyWebpackPlugin([{ from: 'src/img' }]),
+  ]
 }

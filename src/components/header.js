@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { logoutUser, getUsers } from '../services/data';
+import { logoutUser, getUsers, getImage } from '../services/data';
 import { Link } from 'react-router';
 
 require('../css/header.scss');
@@ -98,7 +98,7 @@ export default class Header extends Component {
                   </a>
                 </li>
                 <li>
-                  <a href="">
+                  <a>
                     <i className="fa fa-user">
                     </i>
                   </a>

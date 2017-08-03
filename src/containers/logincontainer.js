@@ -16,6 +16,9 @@ class LoginContainer extends Component {
 }
 
 const mapStateToProps = state => {
+
+  console.log(state);
+
   const { login } = state;
   const { token } = login;
 

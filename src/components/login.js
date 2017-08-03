@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import { loginUser, getFile } from '../services/data';
+import { loginUser, getImage } from '../services/data';
 import Form from 'react-router-form'
 require('../css/login.scss');
 
@@ -15,7 +15,7 @@ export default class Login extends Component {
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
     this.handleUsernameChange = this.handleUsernameChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleUpload = this.handleUpload.bind(this);
+    // this.handleUpload = this.handleUpload.bind(this);
   }
 
   handleSubmit(e){
@@ -31,11 +31,11 @@ export default class Login extends Component {
     });
   }
 
-  handleUpload(event){
-    console.log(event.target.files);
-    // uploadFile(event.target.files[0], this.state.token);
-    getFile(this.state.token);
-  }
+  // handleUpload(event){
+  //   console.log(event.target.files);
+  //   // uploadFile(event.target.files[0], this.state.token);
+  //   getFile(this.state.token);
+  // }
 
   handlePasswordChange(e){
     this.setState({ password: e.target.value })
@@ -52,6 +52,7 @@ export default class Login extends Component {
 
     return (
       <div className="container login">
+        <script src="/js/jquery.bxslider.js"></script>
         <div className="main-header">
           <h2>Your Account</h2>
         </div>
@@ -60,7 +61,7 @@ export default class Login extends Component {
             <h2 className="lines">
               <span>Log In</span>
             </h2>
-            <form onClick={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit}>
               <div className="form-group">
                 <label htmlFor="username">Email Address *</label>
                 <input id="username" className="form-control" name="username" placeholder="Email address" type="text" onChange={this.handleUsernameChange}/>
@@ -116,7 +117,6 @@ export default class Login extends Component {
               <span>Register</span>
             </button>
           </div>
-          <button onClick={this.handleUpload}>Get Image</button>
          
         </Form>
       </div>
@@ -126,5 +126,6 @@ export default class Login extends Component {
   }
 
 }
+//  <button onClick={this.handleUpload}>Get Image</button>
 
 //   <input type="file" name="filename" onChange={this.handleUpload}/> 
