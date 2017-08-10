@@ -14,17 +14,49 @@
         .display-items {
             margin-bottom: 40px;
             overflow: hidden;
+            width: 100%;
+
+            // @media (max-width: 767px){
+            //     margin: 0 auto;
+            //     margin-bottom: 40px;
+            //     width: 75%;
+            // }
+
+            @media (min-width: 768px){
+                width: 49%;
+            }
+
+            @media (min-width: 992px) {
+                width: 30%;
+            }
 
             .display-img {
 
                 overflow: hidden;
 
+                // @media (max-width: 767px){
+                //     margin: 0 auto;
+                // }
+
                 img{
-                    width: 350px;
+                    // width: 350px;
+                    width: 100%;
                     height: auto;
                     display: block;
                     cursor: pointer;
                     transition: all 0.2s ease-in-out;
+
+
+                    @media (max-width: 767px){
+                        width: 100%;
+                        height: auto;   
+                    }
+
+                    // @media (min-width: 992px){
+                    //     width: 30%;
+                    //     height: auto;
+                    // }
+
                 }
 
                 img:hover {
@@ -39,6 +71,12 @@
                 display: block;
                 padding: 15px;  
                 margin: 0;
+
+                @media (max-width: 767px){
+                    height: auto;
+                    width: 100%;
+                    margin: 0 auto;
+                }
 
                 h1 {
                     margin: 0;
