@@ -25,7 +25,8 @@ class DisplayItem extends Component {
                     <p>
                         <span className="price">£23.00</span>
                         <span className="basket">
-                            <i className="fa fa-heart-o"></i>                        </span>
+                            <i className="fa fa-heart-o"></i>                        
+                        </span>
                     </p>
                 </div>
             </div>

@@ -27,7 +27,7 @@ export default class Login extends Component {
       this.setState({ token : data.token }, function() {
         console.log(this.state.token);
       });
-      this.props.login(data.token);
+      this.props.login(data.token, data.id);
     });
   }
 
@@ -47,8 +47,6 @@ export default class Login extends Component {
   }
 
   render(){
-
-    console.log('login component', this.props);
 
     return (
       <div className="container login">

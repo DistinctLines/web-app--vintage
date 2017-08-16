@@ -1,18 +1,6 @@
 import axios from 'axios';
 import formData from 'form-data';
 
-const data = store => next => action => {
-
-  next(action);
-
-  switch(action.type){
-
-    case 'GET_USER_ITEMS':
-
-
-  };
-}
-
 export const logoutUser = () => {
   let url = 'http://localhost:3000/users/loggedin';
   let data = axios.get(url, {})
@@ -99,4 +87,33 @@ export const getIntialData = () => {
       console.log(err);
     });
   return data;
+}
+
+export const addItemToBasket = (token, itemId, userId) => {
+
+  let url = 'http://localhost:3000/api/addItem?token=' + token;
+  let data = axios.post(url, {
+    id: userId,
+    itemId: itemId
+  }).then( res => {
+    return res;
+  }).catch(err => {
+    console.log(err);
+  });
+
+  return data;
+
+}
+
+export const getCartItems = (token, userId) => {
+
+  let url = 'http://localhost:3000/api/cartitems?token=' + token;
+  let data = axios.post(url, {
+    id: userId
+  }).then( res => {
+    return res;
+  }).catch( err => {
+    console.log(err);
+  });
+
 }

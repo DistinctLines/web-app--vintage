@@ -1,13 +1,14 @@
 import { LOGIN_USER } from '../constants/actionTypes';
 
 const initialState = {
-  token: 'null'
+  token: 'null',
+  id: 0
 }
 
 const login = (state = initialState, action) => {
 
 
-      console.log(action.type);
+  console.log(action);
 
   switch(action.type){
     case LOGIN_USER:
@@ -15,7 +16,8 @@ const login = (state = initialState, action) => {
 
       return {
         ...state,
-        token: action.token
+        token: action.token,
+        id: action.id
       };
       break;
 

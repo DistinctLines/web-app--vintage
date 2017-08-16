@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import ImageGallery from 'react-image-gallery';
 import { getImage } from '../services/data';
+import { addItemToBasket } from '../services/data';
 
 require('../../node_modules/react-image-gallery/styles/scss/image-gallery.scss')
 require('../css/item.scss');
@@ -16,11 +17,23 @@ class Item extends Component{
     }
 
     this.handleImage.bind(this);
+    this.handleAddCart.bind(this);
   }
 
   componentWillMount(){
     const { itemId } = this.props.params; 
     this.setState({ _imgID: itemId})
+  }
+
+  handleAddCart(token, item, userId){
+    let addCart = addItemToBasket(token, item._id, userId);
+    Promise.resolve(addCart)
+      .then(data => {
+        this.props.addItem(item);
+        console.log('added to cart');
+      }).catch(err => {
+        console.log('cannot add to cart');
+      });
   }
 
   handleImage(token){
@@ -57,7 +70,7 @@ class Item extends Component{
 
     console.log(this.props);
 
-    const { token, items } = this.props;
+    const { token, items, id } = this.props;
     const param = this.props.params.itemId;
 
     // items.filter(item => {
@@ -73,8 +86,6 @@ class Item extends Component{
       if(item._id === param)
         return item;
     })
-
-    console.log(item);
 
     return (
 
@@ -115,7 +126,7 @@ class Item extends Component{
               </ul>
               <h1>£29.00</h1>
               <div className="button-container">
-                <button className="add-basket">
+                <button className="add-basket" onClick={() => this.handleAddCart(token, item, id)}>
                   <i className="fa fa-shopping-basket"></i>
                   <span>Add To Basket</span>
                 </button>
@@ -128,7 +139,5 @@ class Item extends Component{
   }
 
 }
-
-//<button className="add-basket" onClick={() => { this.handleImage(token) }}>
 
 export default Item;

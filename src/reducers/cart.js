@@ -19,6 +19,12 @@ const cart = (state = initialState, action) => {
     //
     //     }
     //   ];
+    case ADD_ITEM_CART:
+      return [
+        ...state,
+        action.item
+      ];
+
     default:
       return state;
   }

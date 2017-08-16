@@ -20,16 +20,17 @@ const mapStateToProps = state => {
   console.log(state);
 
   const { login } = state;
-  const { token } = login;
+  const { token, id } = login;
 
   return {
     token
   };
+
 }
 
 const mapDispatchToProps = dispatch => {
   return ({
-    login: (token) => {dispatch(login_user(token))}
+    login: (token, id) => {dispatch(login_user(token, id))}
   });
 }
 

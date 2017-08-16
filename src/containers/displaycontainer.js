@@ -9,6 +9,9 @@ class DisplayContainer extends Component {
     }
 
     render(){
+
+        console.log(this.props);
+
         return(
             <Display {...this.props} />
         );
@@ -19,11 +22,12 @@ class DisplayContainer extends Component {
 const mapStateToProps = state => {
 
     const { login, items } = state;
-    const { token } = login;
+    const { token, id } = login;
 
     return {
         token,
-        items
+        items,
+        id
     };
 
 }

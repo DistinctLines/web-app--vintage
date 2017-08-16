@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './header';
 import Footer from './footer';
+import BasketItem from './basketitem';
 require('../css/basket.scss');
 
 class Basket extends Component {
@@ -10,6 +11,9 @@ class Basket extends Component {
   }
 
   render(){
+
+    console.log(this.props.cart);
+
     return(
       <div className="main container">
         <div className="left-main-column">
@@ -46,24 +50,11 @@ class Basket extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td className="desc">Vintage Yellow Shear Pleat Dress</td>
-                            <td className="price">£18.00</td>
-                            <td className="quantity">1</td>
-                            <td className="subtotal"> £18.00</td>
-                        </tr>
-                        <tr>
-                            <td className="desc">Vintage Yellow Shear Pleat Dress</td>
-                            <td className="price">£18.00</td>
-                            <td className="quantity">1</td>
-                            <td className="subtotal"> £18.00</td>
-                        </tr>
-                        <tr className="last">
-                            <td className="desc">Vintage Yellow Shear Pleat Dress</td>
-                            <td className="price">£18.00</td>
-                            <td className="quantity">1</td>
-                            <td className="subtotal"> £18.00</td>
-                        </tr>
+                        {
+                            this.props.cart.map((item, index) => {
+                                return <BasketItem key={index} item={item} />
+                            })
+                        }
                     </tbody>
                 </table>
             </form>

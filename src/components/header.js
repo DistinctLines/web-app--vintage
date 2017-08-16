@@ -57,7 +57,7 @@ export default class Header extends Component {
             <div className="center-header-column">
               <ul className="main-menu">
                 <li className="first-active">
-                  <a href="/shop" title="Shop All">Shop</a>
+                  <Link to="/display">Shop</Link>
 
                   <div className="dropdown-content">
                     <ul>
@@ -74,7 +74,7 @@ export default class Header extends Component {
                   <a href="shop/" title="New Items">New Items</a>
                 </li>
                 <li>
-                  <Link to="/basket">
+                  <Link to="/basket">SHOP
                     Sale
                   </Link>
                 </li>
