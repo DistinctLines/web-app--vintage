@@ -115,7 +115,6 @@ export default class Login extends Component {
               <span>Register</span>
             </button>
           </div>
-         
         </Form>
       </div>
       </div>

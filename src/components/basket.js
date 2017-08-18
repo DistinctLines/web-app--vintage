@@ -8,11 +8,58 @@ class Basket extends Component {
 
   constructor(props){
     super(props);
+    this.state = {
+        cart: [],
+        total: 0
+    }
+
+  }
+
+    containsKey(arr, name){
+
+        for(var i = 0; i < arr.length; i++){
+            if(arr[i].id === name){
+                return true;
+            }
+        }
+        return false;
+  }
+
+  componentDidMount(){
+
+    var { cart } = this.props;
+
+    var itemNames = [];
+    var total = 0;
+
+    // console.log('item size' + cart.length);
+
+    cart.map((item, index) => {
+
+        total += item.cost;
+
+        if(!this.containsKey(itemNames, item.name)){
+            itemNames.push({id: item.name, item: item, amt: 1});
+            // console.log('added new entry');
+        }
+        else
+            for(var i = 0; i < itemNames.length; i++){
+                 
+                if(itemNames[i].id == item.name){
+                    itemNames[i].amt = itemNames[i].amt + 1;
+                    // console.log('updated entry');
+                }
+            }
+
+        // console.log(itemNames);
+    });
+
+    this.setState({cart: itemNames});
+    this.setState({total: total});
+
   }
 
   render(){
-
-    console.log(this.props.cart);
 
     return(
       <div className="main container">
@@ -51,7 +98,7 @@ class Basket extends Component {
                     </thead>
                     <tbody>
                         {
-                            this.props.cart.map((item, index) => {
+                            this.state.cart.map((item, index) => {
                                 return <BasketItem key={index} item={item} />
                             })
                         }
@@ -60,9 +107,9 @@ class Basket extends Component {
             </form>
             <div className="total">
                 <div className="inner">
-                    <p className="strong">TOTAL</p>
+                    <p className="strong">TOTAL</p> 
                     <div className="total-price">
-                        £34.00
+                        £{parseFloat(Math.round(this.state.total * 100) / 100).toFixed(2)}
                     </div>
                 </div>
             </div>

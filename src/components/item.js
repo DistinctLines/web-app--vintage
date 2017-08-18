@@ -3,6 +3,8 @@ import $ from 'jquery';
 import ImageGallery from 'react-image-gallery';
 import { getImage } from '../services/data';
 import { addItemToBasket } from '../services/data';
+import Form from 'react-router-form';
+import { browserHistory } from 'react-router';
 
 require('../../node_modules/react-image-gallery/styles/scss/image-gallery.scss')
 require('../css/item.scss');
@@ -30,11 +32,12 @@ class Item extends Component{
     Promise.resolve(addCart)
       .then(data => {
         this.props.addItem(item);
+        browserHistory.push('/basket');
         console.log('added to cart');
       }).catch(err => {
         console.log('cannot add to cart');
       });
-  }
+  } 
 
   handleImage(token){
     let image = getImage(token);
@@ -51,33 +54,23 @@ class Item extends Component{
 
      const images = [
       {
-        original: this.state._imgID + '.jpg',
-        thumbnail: this.state._imgID + '.jpg',
+        original: this.state._imgID + '1.jpg',
+        thumbnail: this.state._imgID + '1.jpg',
       },
       {
-        original: this.state._imgID + '.jpg',
-        thumbnail: this.state._imgID + '.jpg',
+        original: this.state._imgID + '2.jpg',
+        thumbnail: this.state._imgID + '2.jpg',
       },
       {
-        original: this.state._imgID + '.jpg',
-        thumbnail: this.state._imgID + '.jpg',
-      },
-      {
-        original: this.state._imgID + '.jpg',
-        thumbnail: this.state._imgID + '.jpg',
+        original: this.state._imgID + '1.jpg',
+        thumbnail: this.state._imgID + '1.jpg',
       }
     ]
 
-    console.log(this.props);
+    // console.log(this.props);
 
     const { token, items, id } = this.props;
     const param = this.props.params.itemId;
-
-    // items.filter(item => {
-    //   if(item._id === param){
-    //     return this.setState({item: item});
-    //   }
-    // });
 
     if(items.length === 0)
       return (<div></div>);
@@ -93,7 +86,6 @@ class Item extends Component{
         <div className="row">
           <div className="image-column">
             <div className="main-nav">
-              {/*<img src="/img/shoes.jpg"/>*/}
               <ImageGallery 
                 items={images}
                 thumbnailPosition={'left'}
@@ -109,29 +101,26 @@ class Item extends Component{
             </div>
           </div>
           <div className="image-info">
-            <div className="image-inner">
-              <h1>{item.name}</h1>
-              <div className="image-description">
-                <p>Gold Leather Converse Trainers. SIZING: Size 
-                  5UK. Super cool unique converse in gold leather.
-                   These are second hand so a little warn and 
-                   lots of life left in them.</p>
+              <div className="image-inner">
+                <h1>{item.name}</h1>
+                <div className="image-description">
+                  <p>{item.description}</p>
+                </div>
+                <ul>
+                  <li><strong>Size:</strong>{item.size}</li>
+                  <li><strong>Material:</strong> {item.material}</li>
+                  <li><strong>Colour:</strong> {item.color}</li>
+                  <li><strong>Condition:</strong> {item.condition}</li>
+                  <li><strong>Vintage Era:</strong> {item.era}</li>
+                </ul>
+                <h1>£29.00</h1>
+                <div className="button-container">
+                  <button className="add-basket" onClick={() => this.handleAddCart(token, item, id)}>
+                    <i className="fa fa-shopping-basket"></i>
+                    <span>Add To Basket</span>
+                  </button>
+                </div>
               </div>
-              <ul>
-                <li><strong>Size:</strong>{item.size}</li>
-                <li><strong>Material:</strong> {item.material}</li>
-                <li><strong>Colour:</strong> {item.color}</li>
-                <li><strong>Condition:</strong> {item.condition}</li>
-                <li><strong>Vintage Era:</strong> {item.era}</li>
-              </ul>
-              <h1>£29.00</h1>
-              <div className="button-container">
-                <button className="add-basket" onClick={() => this.handleAddCart(token, item, id)}>
-                  <i className="fa fa-shopping-basket"></i>
-                  <span>Add To Basket</span>
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ class App extends Component {
    render() {
       return (
         <div className="main-div">
-          <Router history={hashHistory}>
+          <Router history={browserHistory}>
             <Route path="/" component={RootContainer}>
               <IndexRoute component={LoginContainer}/>
               <Route path="/register" component={Footer} />

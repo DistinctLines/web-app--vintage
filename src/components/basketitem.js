@@ -8,10 +8,10 @@ class BasketItem extends Component {
 
         return(
             <tr>
-                <td className="desc">{ item.name }</td>
-                <td className="price">{ item.cost }</td>
-                <td className="quantity">1</td>
-                <td className="subtotal">{ item.cost }</td>
+                <td className="desc">{ item.item.name }</td>
+                <td className="price">{ item.item.cost }</td>
+                <td className="quantity">{ item.amt }</td>
+                <td className="subtotal">{ item.item.cost * item.amt}</td>
             </tr>
         );
     };

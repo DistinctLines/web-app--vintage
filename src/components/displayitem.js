@@ -15,12 +15,12 @@ class DisplayItem extends Component {
             <div className="display-items">
                 <div className="display-img">
                     <Link to={'/' + this.props.item._id}>
-                        <img src={this.props.item._id + ".jpg"}>
+                        <img src={this.props.item._id + "1.jpg"}>
                         </img>
                     </Link>
                 </div>
                 <div className="image-description">
-                    <h1>Gold Converse Shoes</h1>
+                    <h1>{this.props.item.name}</h1>
                     <span className="desc">Soft and cosy</span>
                     <p>
                         <span className="price">£23.00</span>
