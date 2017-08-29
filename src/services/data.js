@@ -115,18 +115,4 @@ export const addItemToBasket = (token, itemId, userId) => {
   });
 
   return data;
-
-}
-
-export const getCartItems = (token, userId) => {
-
-  let url = 'http://localhost:3000/api/cartitems?token=' + token;
-  let data = axios.post(url, {
-    id: userId
-  }).then( res => {
-    return res;
-  }).catch( err => {
-    console.log(err);
-  });
-
 }
