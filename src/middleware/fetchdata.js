@@ -8,41 +8,55 @@ export const fetchdata = store => next => action => {
 
     // next(action);
 
+    next(action);
     switch(action.type){
-        case 'INITIAL_DATA':
 
-            let url = 'http://localhost:3000/item1';
-            let data = axios.get(url)
-                .then(res => {
-                // return store.dispatch(success_data(res.data));
-                return res.data;
+        case 'INITIAL_DATA' :
+            let items = getAllItems();
+            Promise.resolve(items)
+                .then(data => {
+                    next({
+                        type: 'SUCCESS_DATA',
+                        data
+                    });
                 }).catch(err => {
-                console.log(err);
-            });
-            Promise.resolve(data)
-                .then( re => {
-                    return store.dispatch(success_data(re));
-                }).catch(err => {
-                    console.log(err);
+
                 });
-        
-        default:
-            return next({...action});
+
     }
 
-    // if(action === 'INITIAL_STATE'){
-    //     console.log('yooo');    
 
-    //     let initial_data = getIntialData();
-    //     Promise.resolve(initial_data).then(data => {
-    //         // store.dispatch(data);
-    //         console.log(data.data);
-    //         store.dispatch(success_data(data.data));
+    // switch(action.type){
+    //     case 'INITIAL_DATA':
 
-    //     next();
-    //     }).catch(err => {
-    //         console.log(err);
-    //     });
+    //         let url = 'http://localhost:3000/item1';
+    //         let data = axios.get(url)
+    //             .then(res => {
+    //             // return store.dispatch(success_data(res.data));
+    //             return res.data;
+    //             }).catch(err => {
+    //             console.log(err);
+    //         });
+    //         Promise.resolve(data)
+    //             .then( re => {
+    //                 return store.dispatch(success_data(re));
+    //             }).catch(err => {
+    //                 console.log(err);
+    //             });
         
+    //     default:
+    //         return next({...action});
     // }
+}
+
+const getAllItems = () => {
+
+    let url = 'http://localhost:3000/item1';
+    let data = axios.get(url)
+        .then(res => {
+            return res.data;
+        }).catch(err => {
+            console.log(err);
+        });
+    return data;
 }

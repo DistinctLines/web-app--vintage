@@ -89,6 +89,19 @@ export const getIntialData = () => {
   return data;
 }
 
+export const getCartItems = (username, token) => {
+
+  let url = 'http://localhost:3000/api/cartitems?token=' + token;
+  let data = axios.post(url, {
+    username: username
+    }).then(res => {
+      return res;
+    }).catch(err => {
+      console.log(err);
+    });
+
+  return data;
+}
 export const addItemToBasket = (token, itemId, userId) => {
 
   let url = 'http://localhost:3000/api/addItem?token=' + token;

@@ -8,12 +8,14 @@ const items = (state = initialState, action) => {
 
         case 'SUCCESS_DATA':
 
+
             const items = action.data.map(item => {
                 console.log(item);
                 return item;
             });
 
             return state.concat(items);
+            break;
 
         default:
             return state;
